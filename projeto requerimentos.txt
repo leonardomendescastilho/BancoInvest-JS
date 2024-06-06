@@ -1,0 +1,23 @@
+projeto requerimentos, tecnologias:
+
+- Vite (bundler + transpiler + server)
+- Tailwind (aplicar css como classe no html)
+- Github (repositório)	
+- Git 	(versionamento do nosso projeto)
+
+configuração do projeto
+__________________________________________________________________
+/home/pasta
+npm create vite@latest
+(usar dot"." para não criar outra pasta no local, mas usar a pasta)
+(chose framework/language)
+(observar o json)
+npm install // dependencias do package.json
+npm run dev (rodando)
+
+instalação postcss vite (seguir a logica)
+
+___________________________________________________________________
+tecnolgias, estudos, etc etc
+
+-display grid
