@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.parent-focus:focus-within {
+  @apply shadow-custom-focus ring-0;
+}
+
+.custom-filter {
+  @apply backdrop-filter backdrop-brightness-200 backdrop-contrast-200 backdrop-blur-lg;
+}
