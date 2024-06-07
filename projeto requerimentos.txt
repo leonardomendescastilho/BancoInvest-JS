@@ -22,3 +22,4 @@ tecnolgias, estudos, etc etc
 
 -display grid
 -git checkout (branch) ou para criar -b (newbranch)
+-tailwind PRA CARALHO
