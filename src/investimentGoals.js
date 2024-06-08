@@ -11,9 +11,8 @@ export function generateReturnsArray(
   profitRateTimePeriod = 'monthly'
 ) {
   if (!startingAmount || !timeProjection) {
-    
     throw new Error(
-      'Initial investment and time amount (prazo) need to be filled with positive values'
+      'Initial investment and time amount need to be filled with positive values'
     );
   }
   const finalProfitRate =
