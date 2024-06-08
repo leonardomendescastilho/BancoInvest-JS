@@ -3,11 +3,11 @@ function convertToMonthlyProfitRate(yearlyProfitRate) {
 }
 
 export function generateReturnsArray(
-  startingAmount = 0, // valor incial
-  monthlyContribution = 0, // contribuiçao mensal
-  timeProjection = 0, // projeção de quanto tempo irá manter
-  timeProjectionPeriod = 'monthly', // projeção em meses ou anos?
-  profitRate = 0, // taxa de retorno (lucro)
+  startingAmount = 0,
+  monthlyContribution = 0,
+  timeProjection = 0,
+  timeProjectionPeriod = 'monthly',
+  profitRate = 0,
   profitRateTimePeriod = 'monthly'
 ) {
   if (!startingAmount || !timeProjection) {
