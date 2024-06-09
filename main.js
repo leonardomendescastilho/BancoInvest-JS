@@ -1,6 +1,7 @@
 import { generateReturnsArray } from './src/investimentGoals';
 
 const form = document.getElementById('form');
+const buttonToClear = document.getElementById('clear-btn');
 
 let thereIsAError = false;
 
@@ -9,34 +10,23 @@ function renderProgression(event) {
   if (thereIsAError) {
     return;
   }
-  const starting = Number(
-    document.getElementById('starting-amount').value.replace(',', '.')
-  );
+  const starting = Number(form['starting-amount'].value.replace(',', '.'));
   const contribution = Number(
-    document.getElementById('monthly-contribution').value.replace(',', '.')
+    form['monthly-contribution'].value.replace(',', '.')
   );
-  const projectin = Number(
-    document.getElementById('time-projection').value.replace(',', '.')
-  );
-  const projectinPeriod = document.getElementById(
-    'time-projection-period'
-  ).value;
-  const profitRate = Number(
-    document.getElementById('profit-rate').value.replace(',', '.')
-  );
+  const projecting = Number(form['time-projection'].value.replace(',', '.'));
+  const projectingPeriod = form['time-projection-period'].value;
+  const profitRate = Number(form['profit-rate'].value.replace(',', '.'));
 
-  const profitRateTimePeriod = document.getElementById(
-    'profit-rate-time-period'
-  ).value;
-  const taxRate = Number(
-    document.getElementById('tax-rate').value.replace(',', '.')
-  );
+  const profitRateTimePeriod = form['profit-rate-time-period'].value;
+
+  const taxRate = Number(form['tax-rate'].value.replace(',', '.'));
 
   const returnsArray = generateReturnsArray(
     starting,
     contribution,
-    projectin,
-    projectinPeriod,
+    projecting,
+    projectingPeriod,
     profitRate,
     profitRateTimePeriod
   );
@@ -44,10 +34,27 @@ function renderProgression(event) {
   console.log(returnsArray);
 }
 
+function cleanInput() {
+  form['starting-amount'].value = '';
+  form['monthly-contribution'].value = '';
+  form['time-projection'].value = '';
+  form['profit-rate'].value = '';
+  form['tax-rate'].value = '';
+
+  const elementsP = document.querySelectorAll('p');
+
+  for (const paragraph of elementsP) {
+    if (!paragraph.classList.contains('hidden')) {
+      paragraph.classList.add('hidden');
+      thereIsAError = false;
+    }
+  }
+}
+
 function validateInput(event) {
   const inputValue = event.target.value.replace(',', '.');
-  const parentElement = event.target.parentElement.parentElement;
-  const paragraphError = parentElement.querySelector('p');
+  const divElement = event.target.parentElement.parentElement;
+  const paragraphError = divElement.querySelector('p');
   const paragraphContainsHidden = paragraphError.classList.contains('hidden');
 
   if (event.target.value === '') {
@@ -77,3 +84,4 @@ for (const formElement of form) {
 }
 
 form.addEventListener('submit', renderProgression);
+buttonToClear.addEventListener('click', cleanInput);

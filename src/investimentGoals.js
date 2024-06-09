@@ -15,13 +15,14 @@ export function generateReturnsArray(
       'Initial investment and time amount need to be filled with positive values'
     );
   }
+
+  const finaltimeProjectionPeriod =
+    timeProjectionPeriod === 'monthly' ? timeProjection : timeProjection * 12;
+
   const finalProfitRate =
     profitRateTimePeriod === 'monthly'
       ? profitRate / 100 + 1
       : convertToMonthlyProfitRate(profitRate / 100 + 1);
-
-  const finaltimeProjectionPeriod =
-    timeProjectionPeriod === 'monthly' ? timeProjection : timeProjection * 12;
 
   const referenceInvestimentObject = {
     investedAmount: startingAmount,
