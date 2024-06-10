@@ -14,7 +14,8 @@
       href="style.css" />
     <title>investment calculator</title>
   </head>
-  <body class="h-dvh grid grid-cols-3 grid-rows-2">
+  <body class="h-[100dvh] grid grid-cols-3 grid-rows-2">
+    <!-- aside -->
     <aside
       class="row-span-2 bg-gray-50 flex flex-col justify-between py-5 px-2">
       <h1 class="text-2xl font-bold px-6 text-center">investment calculator</h1>
@@ -177,8 +178,19 @@
         </button>
       </div>
     </aside>
-    <main>
-      <p>Resultados</p>
+
+    <!-- main -->
+    <main class="h-full bg-gray-50">
+      <section id="charts-container">
+        <div class="h-[36dvh]">
+          <p>Resulado Final</p>
+          <canvas id="money-distribution"></canvas>
+        </div>
+        <div class="h-[56dvh]">
+          <p>Progressão</p>
+          <canvas id="progression"></canvas>
+        </div>
+      </section>
     </main>
     <script
       type="module"
