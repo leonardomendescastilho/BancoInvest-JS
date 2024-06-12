@@ -5,6 +5,8 @@ const form = document.getElementById('form');
 const buttonToClear = document.getElementById('clear-btn');
 const moneyDistribution = document.getElementById('money-distribution');
 const progression = document.getElementById('progression');
+const resultP = document.getElementById('p-result');
+const progressionP = document.getElementById('p-progression');
 let doughnutChartReference = {};
 let barChartReference = {};
 
@@ -20,6 +22,14 @@ function renderProgression(event) {
   if (thereIsAError) {
     return;
   }
+  if (
+    progressionP.classList.contains('hidden') &&
+    resultP.classList.contains('hidden')
+  ) {
+    progressionP.classList.remove('hidden');
+    resultP.classList.remove('hidden');
+  }
+
   const starting = Number(form['starting-amount'].value.replace(',', '.'));
   const contribution = Number(
     form['monthly-contribution'].value.replace(',', '.')
