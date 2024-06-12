@@ -17,7 +17,7 @@
 <br>
 
 <p align="center">
-  <img alt="invest-calculator" src="./public/imageofcalculator.png" width="100%">
+  <img alt="invest-calculator" src="./public/imageofcalculator.png" width="50%">
 </p>
 
 ## 🚀 Tecnologias
